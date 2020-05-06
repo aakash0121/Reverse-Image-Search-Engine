@@ -2,12 +2,14 @@ import cv2
 import color_descriptor
 import searcher
 import montage
+import os
 
 #stored features file of out database
 index_path = "src/index.csv"
 
 #query image
-query_image_path = "src/queries/" + input("Just enter the image file name: ")
+input = input("Just enter the image file name: ")
+query_image_path = "src/queries/" + input
 
 #database with which results will be shown
 database_path = "src/dataset/"
@@ -32,7 +34,15 @@ def Search(index_path, query_image_path, database_path, bins):
     for (score, resultID) in search_results:
         results_image_paths.append("src/dataset/" + resultID)
 
-    montage.build_montage(results_image_paths)
+    montages = montage.build_montage(results_image_paths)
+
+    # loop over the montages and display each of them
+    for m in montages:
+        cv2.imshow("Montage", m)
+        cv2.waitKey(0)
+    
+    # storing the output in output folder in src
+    cv2.imwrite("src/output/montage_"+ os.path.splitext(input)[0] +".png", m)
 
 if __name__ == "__main__":
     Search(index_path, query_image_path, database_path, bins)

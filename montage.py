@@ -12,9 +12,4 @@ def build_montage(results_image_paths):
         images.append(image)
     # construct the montages for the images
     montages = build_montages(images, (400, 400), (5, 2))
-
-    # loop over the montages and display each of them
-    for montage in montages:
-        cv2.imshow("Montage", montage)
-        cv2.waitKey(0)
-
+    return montages
