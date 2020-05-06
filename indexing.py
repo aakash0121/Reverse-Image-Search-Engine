@@ -3,7 +3,7 @@ import glob
 import color_descriptor
 from test import bins
 
-output = open("src/index2.csv", 'w')
+output = open("src/index.csv", 'w')
 
 for imagePath in glob.glob("src/dataset" + "/*.png"):
 	# extract the image ID from the image path and load that image

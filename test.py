@@ -4,7 +4,7 @@ import searcher
 import montage
 
 #stored features file of out database
-index_path = "src/index1.csv"
+index_path = "src/index.csv"
 
 #query image
 query_image_path = "src/queries/1.png"
