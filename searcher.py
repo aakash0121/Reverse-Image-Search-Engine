@@ -13,10 +13,8 @@ def Search(index_path, query_features, limit = 10):
     # open the index csv file
     with open(index_path) as f:
         reader = csv.reader(f)
-
         # loop over all the image feature entries in the index.csv
         for entry in reader:
-
             # getting Image ID and features and computing distance using chi-square
             # distance between the query_features and features of images in database
             features = [float(x) for x in entry[1:]]
@@ -29,6 +27,5 @@ def Search(index_path, query_features, limit = 10):
 
     # sort the results dictionary with values(distance) of Image IDs(keys)
     results = sorted([(v, k) for (k, v) in results.items()])
-
     return results[:limit]
     
