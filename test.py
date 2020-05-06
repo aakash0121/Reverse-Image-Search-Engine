@@ -7,7 +7,7 @@ import montage
 index_path = "src/index.csv"
 
 #query image
-query_image_path = "src/queries/1.png"
+query_image_path = "src/queries/" + input("Just enter the image file name: ")
 
 #database with which results will be shown
 database_path = "src/dataset/"
