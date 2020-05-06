@@ -19,4 +19,7 @@ bins = (8, 12, 3)
 query_image = cv2.imread(query_image_path)
 
 # features list of query image as per the 5 regions
-features = color_descriptor.feature_extractor()
+query_features = color_descriptor.feature_extractor(query_image)
+
+# searching the database for similar images and getting the results
+search_results = searcher.Search(index_path, query_features)
