@@ -11,4 +11,13 @@ This project takes a query as an Image then find similar images and results in a
 
 ## Examples
 ### Input Image
-![Image]()
+![Image](https://github.com/aakash0121/Reverse-Image-Searcher/blob/master/src/queries/4.png)
+
+### Output Montage
+![Image](https://github.com/aakash0121/Reverse-Image-Searcher/blob/master/src/output/montage_4.png)
+
+### Input Image
+![Image](https://github.com/aakash0121/Reverse-Image-Searcher/blob/master/src/queries/7.png)
+
+### Output Image
+![Image](https://github.com/aakash0121/Reverse-Image-Searcher/blob/master/src/output/montage_7.png)
