@@ -1,10 +1,9 @@
 import cv2
 import numpy as np 
-from test import bins
 import imutils
 
 
-def histogram(image, mask):
+def histogram(image, mask, bins):
     # extract a 3D color histogram from the masked region of the
     # image, using the supplied number of bins per channel
     hist = cv2.calcHist([image], [0, 1, 2], mask, bins,
@@ -19,9 +18,9 @@ def histogram(image, mask):
         hist = cv2.normalize(hist, hist).flatten()
     return hist
 
-def feature_extractor(query_image):
+def feature_extractor(query_image, bins):
     # convert RGB color space into HSV
-    image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+    image = cv2.cvtColor(query_image, cv2.COLOR_BGR2HSV)
     # features list where we store all 5 regions feature
     features = []
 
@@ -57,10 +56,10 @@ def feature_extractor(query_image):
         siede_mask = cv2.subtract(side_mask, ellipse_mask)
 
         # extract a color histogram from the image, then update the features list
-        hist = histogram(image, side_mask)
+        hist = histogram(image, side_mask, bins)
         features.extend(hist)
     
     # extract a color histogram from the elliptical region and update the feature vector
-    hist = histogram(image, ellipse_mask)
+    hist = histogram(image, ellipse_mask, bins)
     features.extend(hist)
     return features
