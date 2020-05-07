@@ -1,14 +1,16 @@
 import cv2
 import glob
 import color_descriptor
-from test import bins
+import os
 
+bins = (8, 12, 3)
 output = open("src/index.csv", 'w')
 
-for imagePath in glob.glob("src/dataset" + "/*.png"):
+for filename in os.listdir("src/dataset/"):
+	print(filename)
 	# extract the image ID from the image path and load that image
-	imageID = imagePath[imagePath.rfind("/") + 1:]
-	image = cv2.imread(imagePath)
+	imageID = filename[filename.rfind("/") + 1:]
+	image = cv2.imread("src/dataset/"+filename)
 
 	# describe the image
 	features = color_descriptor.feature_extractor(image, bins)
