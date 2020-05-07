@@ -1,5 +1,4 @@
 import cv2
-import glob
 import color_descriptor
 import os
 
