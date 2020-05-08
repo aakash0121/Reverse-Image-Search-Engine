@@ -3,6 +3,7 @@ import color_descriptor
 import searcher
 import montage
 import os
+import test_caption
 
 #stored features file of out database
 index_path = "src/index.csv"
@@ -45,4 +46,11 @@ def Search(index_path, query_image_path, database_path, bins):
     cv2.imwrite("src/output/montage_"+ os.path.splitext(input)[0] +".png", m)
 
 if __name__ == "__main__":
-    Search(index_path, query_image_path, database_path, bins)
+    # Search(index_path, query_image_path, database_path, bins)
+    caption = test_caption.returns_caption(query_image_path)
+
+    print("############################################################################################")
+    print(caption)
+    print("############################################################################################")
+
+    
