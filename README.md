@@ -4,6 +4,9 @@ It searches for best results on web as well as on its database and provides 10(o
 When a user uploads an image it first tries to find tags and if it passes a certain confidence threshold if starts to search for similar images on the web while another search is going on within its database. Then, all the images which it finds suitable collects in one place and again passes to the descriptor for sequencing best 10 results and put it as a montage where an user can see the results.
 And it is all wrapped up under the Flask environment to get a smooth experience of searching.
 
+## Explanation
+
+
 ## Usage
 1. Download `INRIA Holiday Dataset` which is available [here](http://lear.inrialpes.fr/people/jegou/data.php)
 2. Put in the `src` folder as `dataset`.
