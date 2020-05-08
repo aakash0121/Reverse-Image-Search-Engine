@@ -4,6 +4,8 @@ import searcher
 import montage
 import os
 import test_caption
+import urllib
+import image_downloader
 
 #stored features file of out database
 index_path = "src/index.csv"
@@ -46,11 +48,17 @@ def Search(index_path, query_image_path, database_path, bins):
     cv2.imwrite("src/output/montage_"+ os.path.splitext(input)[0] +".png", m)
 
 if __name__ == "__main__":
-    # Search(index_path, query_image_path, database_path, bins)
+    
     caption = test_caption.returns_caption(query_image_path)
 
     print("############################################################################################")
     print(caption)
     print("############################################################################################")
 
+    query_string = urllib.parse.urlencode({"search_query" : caption})
+    end = "&sxsrf=ALeKk02jEvpb7-iPYE-u4hhd34n9qY7awA:1588938198188&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjgxf2GmKTpAhVRVH0KHfS8CuQQ_AUoAXoECBoQAw&biw=1478&bih=733"
+    url = "https://www.google.com/search?q=" + query_string + end
+
+    image_downloader.image_downloader(url)
+    Search(index_path, query_image_path, database_path, bins)
     
