@@ -1,4 +1,4 @@
-# Reverse-Image-Searcher
+# Reverse-Image-Search-Engine
 Reverse Image Search Engine lets you search by an image as a query and returns you similar images plus original image with their respective tags.
 It searches for best results on web as well as on its database and provides 10(or as per the user) images which it predicts most similar. It uses Image Captioning(for tagging) and different descriptors for identifying each image features.
 When a user uploads an image it first tries to find tags and if it passes a certain confidence threshold if starts to search for similar images on the web while another search is going on within its database. Then, all the images which it finds suitable collects in one place and again passes to the descriptor for sequencing best 10 results and put it as a montage where an user can see the results.
